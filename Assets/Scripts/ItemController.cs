@@ -112,17 +112,26 @@ public class ItemController : MonoBehaviour
             {
                 col.gameObject.SetActive(false);
             }
+            gameController.OnActionDone();
             Debug.Log("Cut the Wire");
         }
     }
 
     private void TriggerWireVertical()
     {
+        Debug.Log("Fixing wire");
         if (CheckForCollider("Wire_Vertical"))
         {
+            Debug.Log("Wire is vertical");
+
             if (isConsumable)
             {
+                Debug.Log("Consuming wire");
+
+                Collider2D col = GetCollider("Wire_Vertical");
+                col.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                 gameController.OnConsumableItem(playerType);
+                gameController.OnActionDone();
             }
             Debug.Log("Add the Wire");
         }

@@ -15,4 +15,6 @@ public class ItemsForLevel
 
     public Vector3 playerOnePos;
     public Vector3 playerTwoPos;
+
+    public int actionToWin;
 }

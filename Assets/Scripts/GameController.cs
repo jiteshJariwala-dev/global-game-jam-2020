@@ -6,16 +6,22 @@ public class GameController : MonoBehaviour
 {
     public ItemsScriptableObject items;
 
+    public GameObject canvas;
+
     private int levelIndex = 0;
 
-    private List<GameObject> playerOneItems;
-    private List<GameObject> playerTwoItems;
+    private List<GameObject> playerOneItems = new List<GameObject>();
+    private List<GameObject> playerTwoItems = new List<GameObject>();
 
     private GameObject playerOneGO;
     private GameObject playerTwoGO;
 
+    private int actionToWin;
     private int playerOneItemIndex = 0;
     private int playerTwoItemIndex = 0;
+    private int actionDone = 0;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +41,8 @@ public class GameController : MonoBehaviour
         
         playerOneGO.GetComponent<CharacterController>().Init(this, PlayerType.PLAYER_ONE);
         playerTwoGO.GetComponent<CharacterController>().Init(this, PlayerType.PLAYER_TWO);
+
+        actionToWin = items.items[levelIndex].actionToWin;
     }
 
     private void SwitchItems(PlayerType playerType)
@@ -43,7 +51,7 @@ public class GameController : MonoBehaviour
         {
             case PlayerType.PLAYER_ONE:
                 Debug.Log("Checking player items");
-                if (playerOneItems.Count >= 2)
+                if (playerOneItems.Count > 1)
                 {
                     Debug.Log("Changing items");
                     Vector3 pos = playerOneGO.transform.position;
@@ -64,7 +72,7 @@ public class GameController : MonoBehaviour
                 break;
 
             case PlayerType.PLAYER_TWO:
-                if (playerTwoItems.Count >= 2)
+                if (playerTwoItems.Count > 1)
                 {
                     Vector3 pos = playerTwoGO.transform.position;
                     playerTwoItemIndex++;
@@ -118,6 +126,8 @@ public class GameController : MonoBehaviour
         switch (type)
         {
             case PlayerType.PLAYER_ONE:
+                // Destroy(playerOneGO);
+                playerOneGO.SetActive(false);
                 playerOneItems.RemoveAt(playerOneItemIndex);
                 playerOneItemIndex--;
                 if (playerOneItemIndex < 0)
@@ -139,6 +149,8 @@ public class GameController : MonoBehaviour
                 break;
 
             case PlayerType.PLAYER_TWO:
+                //Destroy(playerTwoGO);
+                playerTwoGO.SetActive(false);
                 playerTwoItems.RemoveAt(playerTwoItemIndex);
                 playerTwoItemIndex--;
                 if (playerTwoItemIndex < 0)
@@ -160,7 +172,16 @@ public class GameController : MonoBehaviour
                 }
                 break;
         }
-    } 
+    }
+
+    public void OnActionDone()
+    {
+        actionDone++;
+        if (actionDone >= actionToWin)
+        {
+            canvas.SetActive(true);
+        }
+    }
 
     
 }
