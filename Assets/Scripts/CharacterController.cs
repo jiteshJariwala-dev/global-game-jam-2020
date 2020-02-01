@@ -42,7 +42,7 @@ public class CharacterController : MonoBehaviour
             keyBinding = keyBindingObj.playerTwoKeyBinding;
         }
         animator.SetBool(walkingTrigger, false);
-        this.GetComponent<ItemController>().Init(controller);
+        this.GetComponent<ItemController>().Init(controller, playerType);
     }
 
     // Update is called once per frame

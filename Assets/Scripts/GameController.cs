@@ -113,7 +113,54 @@ public class GameController : MonoBehaviour
         }
     }
 
-    //public void 
+    public void OnConsumableItem(PlayerType type)
+    {
+        switch (type)
+        {
+            case PlayerType.PLAYER_ONE:
+                playerOneItems.RemoveAt(playerOneItemIndex);
+                playerOneItemIndex--;
+                if (playerOneItemIndex < 0)
+                {
+                    playerOneItemIndex = 0;
+                }
+                Debug.Log("Checking player items");
+                if (playerOneItems.Count > 0)
+                {
+                    Debug.Log("Changing items");
+                    playerOneGO = Instantiate(playerOneItems[playerOneItemIndex]);
+                    playerOneGO.GetComponent<CharacterController>().Init(this, PlayerType.PLAYER_ONE);
+                    playerOneGO.transform.position = items.items[levelIndex].playerOnePos;
+                }
+                else
+                {
+                    Debug.Log("Player one has only 1 item left");
+                }
+                break;
+
+            case PlayerType.PLAYER_TWO:
+                playerTwoItems.RemoveAt(playerTwoItemIndex);
+                playerTwoItemIndex--;
+                if (playerTwoItemIndex < 0)
+                {
+                    playerTwoItemIndex = 0;
+                }
+
+                Debug.Log("Checking player items");
+                if (playerTwoItems.Count > 0)
+                {
+                    Debug.Log("Changing items");
+                    playerTwoGO = Instantiate(playerTwoItems[playerTwoItemIndex]);
+                    playerTwoGO.GetComponent<CharacterController>().Init(this, PlayerType.PLAYER_TWO);
+                    playerTwoGO.transform.position = items.items[levelIndex].playerTwoPos;
+                }
+                else
+                {
+                    Debug.Log("Player two has only 1 item left");
+                }
+                break;
+        }
+    } 
 
     
 }

@@ -7,7 +7,20 @@ public class ItemController : MonoBehaviour
     [SerializeField]
     private ItemType itemType;
 
+    [SerializeField]
+    private bool isConsumable = false;
+
+    [SerializeField]
+    private bool isInteractable = true;
+
+    [SerializeField]
+    private bool hasSwapItem = false;
+
+    [SerializeField]
+    private GameObject swapItem;
+
     private GameController gameController;
+    private PlayerType playerType;
 
     private List<Collider2D> colliderList = new List<Collider2D>();
    
@@ -27,9 +40,10 @@ public class ItemController : MonoBehaviour
         colliderList.Remove(collider);
     }
 
-    public void Init(GameController controller)
+    public void Init(GameController controller, PlayerType type)
     {
         gameController = controller;
+        playerType = type;
     }
 
     public void TriggerItemInteration ()
@@ -52,18 +66,20 @@ public class ItemController : MonoBehaviour
             case ItemType.JACK:
                 TriggerJack();
                 break;
+            case ItemType.CUTTER:
+                TriggerCutter();
+                break;
+            case ItemType.WIRE_VERTICAL:
+                TriggerWireVertical();
+                break;
         }
     }
 
     private void TriggerScrewDriver ()
     {
-        foreach(Collider2D col in colliderList)
+        if (CheckForCollider("Bolt"))
         {
-            if (col.tag == "Bolt")
-            {
-                
-                Debug.Log("Screw the bolt");
-            }
+            Debug.Log("Screw the bolt");
         }
     }
 
@@ -87,6 +103,55 @@ public class ItemController : MonoBehaviour
 
     }
 
+    private void TriggerCutter()
+    {
+        if (CheckForCollider("Cuttable"))
+        {
+            Collider2D col = GetCollider("Cuttable");
+            if (col != null)
+            {
+                col.gameObject.SetActive(false);
+            }
+            Debug.Log("Cut the Wire");
+        }
+    }
+
+    private void TriggerWireVertical()
+    {
+        if (CheckForCollider("Wire_Vertical"))
+        {
+            if (isConsumable)
+            {
+                gameController.OnConsumableItem(playerType);
+            }
+            Debug.Log("Add the Wire");
+        }
+    }
+
+    private bool CheckForCollider(string targetTag)
+    {
+        foreach (Collider2D col in colliderList)
+        {
+            if (col.tag == targetTag)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Collider2D GetCollider(string targetTag)
+    {
+        foreach (Collider2D col in colliderList)
+        {
+            if (col.tag == targetTag)
+            {
+                return col;
+            }
+        }
+        return null;
+    }
+
 
 
 
@@ -96,7 +161,9 @@ public class ItemController : MonoBehaviour
         BOLT,
         NUT,
         GEAR,
-        JACK
+        JACK,
+        WIRE_VERTICAL,
+        CUTTER
     }
 
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Bolt
+  - Cuttable
   layers:
   - Default
   - TransparentFX
