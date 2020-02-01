@@ -30,6 +30,9 @@ public class GameController : MonoBehaviour
 
         playerOneGO = Instantiate(playerOneItems[playerOneItemIndex]);
         playerTwoGO = Instantiate(playerTwoItems[playerTwoItemIndex]);
+        playerOneGO.transform.position = items.items[levelIndex].playerOnePos;
+        playerTwoGO.transform.position = items.items[levelIndex].playerTwoPos;
+        
         playerOneGO.GetComponent<CharacterController>().Init(this, PlayerType.PLAYER_ONE);
         playerTwoGO.GetComponent<CharacterController>().Init(this, PlayerType.PLAYER_TWO);
     }

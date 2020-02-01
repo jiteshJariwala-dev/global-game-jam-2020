@@ -27,7 +27,6 @@ public class GameBorderCreator : MonoBehaviour
         GameObject bot = Instantiate(borderGO, transform);
         bot.transform.position = new Vector3(0f, -height, 0f);
         bot.transform.localScale = new Vector3(width * 2, 0.1f, 1f);
-
     }
 
 

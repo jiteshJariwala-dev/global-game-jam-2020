@@ -12,4 +12,7 @@ public class ItemsForLevel
 {
     public List<GameObject> playerOneItems;
     public List<GameObject> playerTwoItems;
+
+    public Vector3 playerOnePos;
+    public Vector3 playerTwoPos;
 }

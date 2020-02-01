@@ -19,7 +19,6 @@ public class ItemController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Col");
         colliderList.Add(collider);
     }
 

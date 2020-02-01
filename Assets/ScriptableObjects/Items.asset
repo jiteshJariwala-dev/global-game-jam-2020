@@ -20,7 +20,13 @@ MonoBehaviour:
     playerTwoItems:
     - {fileID: 284220281038484402, guid: 77667ff09b83f1945a0bcb41653704d6, type: 3}
     - {fileID: 293191719832305439, guid: e5b5b275933066b4b92187b85b2cb7eb, type: 3}
+    playerOnePos: {x: -1.758, y: 0, z: 0}
+    playerTwoPos: {x: 1.576, y: -1, z: 0}
   - playerOneItems: []
     playerTwoItems: []
+    playerOnePos: {x: 0, y: 0, z: 0}
+    playerTwoPos: {x: 0, y: 0, z: 0}
   - playerOneItems: []
     playerTwoItems: []
+    playerOnePos: {x: 0, y: 0, z: 0}
+    playerTwoPos: {x: 0, y: 0, z: 0}
