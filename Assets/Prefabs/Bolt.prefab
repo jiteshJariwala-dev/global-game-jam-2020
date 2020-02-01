@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8223904646043475311}
   - component: {fileID: 8223904646043475304}
   - component: {fileID: 8223904646043475305}
+  - component: {fileID: 737195060851851575}
   m_Layer: 0
   m_Name: Bolt
   m_TagString: Untagged
@@ -101,6 +102,19 @@ PolygonCollider2D:
       - {x: 0.041038096, y: -0.10911685}
       - {x: 0.0869416, y: -0.07630402}
       - {x: 0.008284986, y: 0.0567981}
+--- !u!114 &737195060851851575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8223904646043475306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c624cdb739b4c54a0612517c926389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 1
 --- !u!1 &8223904646776643613
 GameObject:
   m_ObjectHideFlags: 0

@@ -82,6 +82,19 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void TriggerItemEvent(PlayerType playerType)
+    {
+        switch(playerType)
+        {
+            case PlayerType.PLAYER_ONE:
+                playerOneGO.GetComponent<ItemController>().TriggerItemInteration();
+                break;
+            case PlayerType.PLAYER_TWO:
+                playerTwoGO.GetComponent<ItemController>().TriggerItemInteration();
+                break;
+        }
+    }
+
 
 
     public void OnPlayerAction (PlayerType playerType, PlayerAction playerAction)
@@ -92,10 +105,12 @@ public class GameController : MonoBehaviour
                 SwitchItems(playerType); 
                 break;
             case PlayerAction.ACTION_02:
-
+                TriggerItemEvent(playerType);
                 break;
         }
     }
+
+    //public void 
 
     
 }

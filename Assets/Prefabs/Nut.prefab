@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4102709968647289280}
   - component: {fileID: 4102709968647289283}
   - component: {fileID: 4102709968647289282}
+  - component: {fileID: 5825221079817981903}
   m_Layer: 0
   m_Name: Nut
   m_TagString: Untagged
@@ -87,6 +88,19 @@ CircleCollider2D:
   m_Offset: {x: 0.0046631247, y: 0}
   serializedVersion: 2
   m_Radius: 0.11361118
+--- !u!114 &5825221079817981903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4102709968647289293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c624cdb739b4c54a0612517c926389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 2
 --- !u!1 &4102709969723108968
 GameObject:
   m_ObjectHideFlags: 0
