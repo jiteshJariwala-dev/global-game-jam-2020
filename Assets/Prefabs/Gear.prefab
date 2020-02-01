@@ -136,11 +136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerType: 0
   playerRigidbody: {fileID: 293191719832305437}
-  keyBinding:
-    moveUp: w
-    moveDown: s
-    moveLeft: a
-    moveRight: d
+  animator: {fileID: 293191719641699871}
+  keyBindingObj: {fileID: 11400000, guid: a3b6f3f9d539e4efebc91ea32a8561c6, type: 2}
 --- !u!1001 &293191718412383945
 PrefabInstance:
   m_ObjectHideFlags: 0

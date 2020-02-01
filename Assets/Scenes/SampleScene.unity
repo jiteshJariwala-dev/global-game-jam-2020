@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44937342, g: 0.49626243, b: 0.5586, a: 1}
+  m_IndirectSpecularColor: {r: 0.44937313, g: 0.49626213, b: 0.5585994, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -567,11 +567,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerType: 0
   playerRigidbody: {fileID: 1617075509}
-  keyBinding:
-    moveUp: w
-    moveDown: s
-    moveLeft: a
-    moveRight: d
+  animator: {fileID: 0}
+  keyBindingObj: {fileID: 0}
 --- !u!1001 &284220280981794289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -589,6 +586,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284220281038484405, guid: 77667ff09b83f1945a0bcb41653704d6,
+        type: 3}
+      propertyPath: keyBindingObj
+      value: 
+      objectReference: {fileID: 11400000, guid: a3b6f3f9d539e4efebc91ea32a8561c6,
+        type: 2}
+    - target: {fileID: 284220281038484405, guid: 77667ff09b83f1945a0bcb41653704d6,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 284220280981794290}
     - target: {fileID: 284220281038484406, guid: 77667ff09b83f1945a0bcb41653704d6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -646,6 +654,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77667ff09b83f1945a0bcb41653704d6, type: 3}
+--- !u!95 &284220280981794290 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 284220280797503683, guid: 77667ff09b83f1945a0bcb41653704d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 284220280981794289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &293191719087589090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -708,6 +722,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 293191719832305436, guid: e5b5b275933066b4b92187b85b2cb7eb,
+        type: 3}
+      propertyPath: keyBindingObj
+      value: 
+      objectReference: {fileID: 11400000, guid: a3b6f3f9d539e4efebc91ea32a8561c6,
+        type: 2}
+    - target: {fileID: 293191719832305436, guid: e5b5b275933066b4b92187b85b2cb7eb,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 293191719087589091}
     - target: {fileID: 293191719832305439, guid: e5b5b275933066b4b92187b85b2cb7eb,
         type: 3}
       propertyPath: m_Name
@@ -715,3 +740,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5b5b275933066b4b92187b85b2cb7eb, type: 3}
+--- !u!95 &293191719087589091 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 293191719641699871, guid: e5b5b275933066b4b92187b85b2cb7eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 293191719087589090}
+  m_PrefabAsset: {fileID: 0}

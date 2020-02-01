@@ -11,14 +11,28 @@ public class CharacterController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
 
     [SerializeField]
-    private KeyBinding keyBinding;
+    private Animator animator;
+
+    [SerializeField]
+    private KeyBindingScriptableObject keyBindingObj;
 
     bool isOnPlatform = true;
+
+    private KeyBinding keyBinding;
+    private string walkingTrigger = "IsWalking";
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (playerType == PlayerType.PLAYER_ONE)
+        {
+            keyBinding = keyBindingObj.playerOneKeyBinding;
+        }
+        else if (playerType == PlayerType.PLAYER_TWO)
+        {
+            keyBinding = keyBindingObj.playerTwoKeyBinding;
+        }
+        animator.SetBool(walkingTrigger, false);
     }
 
     // Update is called once per frame
@@ -39,11 +53,28 @@ public class CharacterController : MonoBehaviour
         }
         if (Input.GetKey(keyBinding.moveLeft))
         {
+            animator.SetBool(walkingTrigger, true);
             MovePlayer(MoveDirection.LEFT);
         }
         if (Input.GetKey(keyBinding.moveRight))
         {
+            animator.SetBool(walkingTrigger, true);
             MovePlayer(MoveDirection.RIGHT);
+        }
+
+        if (Input.GetKeyDown(keyBinding.actionOne))
+        {
+            Debug.Log("Action 1 triggered");
+        }
+        if(Input.GetKeyDown(keyBinding.actionTwo))
+        {
+            Debug.Log("Action 2 triggered");
+        }
+
+        if (Input.GetKeyUp(keyBinding.moveLeft) || Input.GetKeyUp(keyBinding.moveRight))
+        {
+            animator.SetBool(walkingTrigger, false);
+            //animator.gameObject.transform.localPosition = Vector3.zero;
         }
     }
 
@@ -85,15 +116,6 @@ public class CharacterController : MonoBehaviour
     }
 
 
-}
-
-[System.Serializable]
-public class KeyBinding
-{
-    public string moveUp;
-    public string moveDown;
-    public string moveLeft;
-    public string moveRight;
 }
 
 public enum MoveDirection
