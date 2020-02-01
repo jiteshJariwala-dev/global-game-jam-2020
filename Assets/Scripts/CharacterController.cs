@@ -52,7 +52,8 @@ public class CharacterController : MonoBehaviour
         switch(direction)
         {
             case MoveDirection.UP:
-                playerRigidbody.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
+                playerRigidbody.AddForce(new Vector2(0, 1), ForceMode2D.Impulse);
+                Debug.Log("Going Up");
                 break;
             case MoveDirection.DOWN:
                 playerRigidbody.AddForce(new Vector2(0, -1));
