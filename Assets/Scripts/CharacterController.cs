@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    private GameController gameController;
+
     [SerializeField]
     private PlayerType playerType;
 
@@ -24,6 +26,13 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
+    }
+
+    public void Init(GameController controller, PlayerType type)
+    {
+        gameController = controller;
+        playerType = type;
         if (playerType == PlayerType.PLAYER_ONE)
         {
             keyBinding = keyBindingObj.playerOneKeyBinding;
@@ -65,9 +74,11 @@ public class CharacterController : MonoBehaviour
         if (Input.GetKeyDown(keyBinding.actionOne))
         {
             Debug.Log("Action 1 triggered");
+            gameController.OnPlayerAction(playerType, PlayerAction.ACTION_01);
         }
         if(Input.GetKeyDown(keyBinding.actionTwo))
         {
+            gameController.OnPlayerAction(playerType, PlayerAction.ACTION_02);
             Debug.Log("Action 2 triggered");
         }
 
@@ -124,6 +135,12 @@ public enum MoveDirection
     DOWN,
     LEFT,
     RIGHT
+}
+
+public enum PlayerAction
+{
+    ACTION_01,
+    ACTION_02
 }
 
 public enum PlayerType
