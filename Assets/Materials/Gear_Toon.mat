@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ScrewDriver_Toon
+  m_Name: Gear_Toon
   m_Shader: {fileID: -6465566751694194690, guid: 9437f40979464b54a892661bace77196,
     type: 3}
   m_ShaderKeywords: 
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_CC739957:
-        m_Texture: {fileID: 2800000, guid: ca52303ffe58dda4a90e0ef195e4a363, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0f53f30a0f5e10444a5e88f556be163b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_EEB1C47E:
@@ -29,8 +29,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_5319D93D: 239.3
-    - Vector1_CDDB02A7: 7
+    - Vector1_5319D93D: 270
+    - Vector1_CDDB02A7: 15
     m_Colors:
     - Color_C7047D70: {r: 1, g: 1, b: 1, a: 0}
     - Vector2_B19FFD93: {r: 0.01, g: 0.02, b: 0, a: 0}
