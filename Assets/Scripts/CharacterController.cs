@@ -13,6 +13,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     private KeyBinding keyBinding;
 
+    bool isOnPlatform = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,15 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(keyBinding.moveUp))
+
+        if (isOnPlatform)
         {
-            MovePlayer(MoveDirection.UP);
+            if (Input.GetKey(keyBinding.moveUp))
+            {
+                MovePlayer(MoveDirection.UP);
+            }
         }
+        
         if (Input.GetKey(keyBinding.moveDown))
         {
             MovePlayer(MoveDirection.DOWN);
@@ -45,7 +52,7 @@ public class CharacterController : MonoBehaviour
         switch(direction)
         {
             case MoveDirection.UP:
-                playerRigidbody.AddForce(new Vector2(0, 1));
+                playerRigidbody.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
                 break;
             case MoveDirection.DOWN:
                 playerRigidbody.AddForce(new Vector2(0, -1));
@@ -56,6 +63,23 @@ public class CharacterController : MonoBehaviour
             case MoveDirection.RIGHT:
                 playerRigidbody.AddForce(new Vector2(1, 0));
                 break;
+        }
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Platform")
+        {
+            isOnPlatform = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            isOnPlatform = false;
         }
     }
 
