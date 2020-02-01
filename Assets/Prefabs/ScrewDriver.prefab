@@ -69,7 +69,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &284220281038484406
 Transform:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.4
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e378989eb5a24fdc8761664155090a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerType: 0
+  playerType: 1
   playerRigidbody: {fileID: 284220281038484404}
   animator: {fileID: 284220280797503683}
   keyBindingObj: {fileID: 11400000, guid: a3b6f3f9d539e4efebc91ea32a8561c6, type: 2}

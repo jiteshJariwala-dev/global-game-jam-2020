@@ -41,7 +41,7 @@ public class CharacterController : MonoBehaviour
 
         if (isOnPlatform)
         {
-            if (Input.GetKey(keyBinding.moveUp))
+            if (Input.GetKeyDown(keyBinding.moveUp))
             {
                 MovePlayer(MoveDirection.UP);
             }
