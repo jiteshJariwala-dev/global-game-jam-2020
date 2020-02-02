@@ -17,12 +17,12 @@ MonoBehaviour:
     moveDown: s
     moveLeft: a
     moveRight: d
-    actionOne: left shift
-    actionTwo: left ctrl
+    actionOne: q
+    actionTwo: e
   playerTwoKeyBinding:
     moveUp: up
     moveDown: down
     moveLeft: left
     moveRight: right
-    actionOne: right shift
-    actionTwo: right ctrl
+    actionOne: j
+    actionTwo: k

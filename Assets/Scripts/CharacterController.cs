@@ -47,6 +47,22 @@ public class CharacterController : MonoBehaviour
         this.GetComponent<ItemController>().Init(controller, playerType);
     }
 
+    public void InvalidMove()
+    {
+        Debug.Log("Play wrong anim");
+        animator.transform.localRotation = Quaternion.identity;
+        // animator.Play("WrongMove");
+        StartCoroutine(PlayAnim());
+        //animator.SetTrigger("WrongMove");
+    }
+
+    IEnumerator PlayAnim()
+    {
+        animator.Play("DefaultAnim");
+        yield return new WaitForEndOfFrame();
+        animator.Play("WrongMove", 0, 0f);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -70,12 +86,12 @@ public class CharacterController : MonoBehaviour
         }
         if (Input.GetKey(keyBinding.moveLeft))
         {
-            // animator.SetBool(walkingTrigger, true);
+            animator.SetBool(walkingTrigger, true);
             MovePlayer(MoveDirection.LEFT);
         }
         if (Input.GetKey(keyBinding.moveRight))
         {
-            // animator.SetBool(walkingTrigger, true);
+            animator.SetBool(walkingTrigger, true);
             MovePlayer(MoveDirection.RIGHT);
         }
 

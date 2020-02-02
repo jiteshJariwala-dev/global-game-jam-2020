@@ -115,6 +115,10 @@ public class ItemController : MonoBehaviour
             gameController.OnActionDone();
             Debug.Log("Cut the Wire");
         }
+        else
+        {
+            gameController.OnInvalidTrigger(playerType);
+        }
     }
 
     private void TriggerWireVertical()
@@ -133,7 +137,15 @@ public class ItemController : MonoBehaviour
                 gameController.OnConsumableItem(playerType);
                 gameController.OnActionDone();
             }
+            else
+            {
+                gameController.OnInvalidTrigger(playerType);
+            }
             Debug.Log("Add the Wire");
+        }
+        else
+        {
+            gameController.OnInvalidTrigger(playerType);
         }
     }
 
