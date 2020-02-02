@@ -81,26 +81,27 @@ public class ItemController : MonoBehaviour
         {
             Debug.Log("Screw the bolt");
         }
+        gameController.OnInvalidTrigger(playerType);
     }
 
     private void TriggerBolt()
     {
-
+        gameController.OnInvalidTrigger(playerType);
     }
 
     private void TriggerNut()
     {
-
+        gameController.OnInvalidTrigger(playerType);
     }
 
     private void TriggerGear()
     {
-
+        gameController.OnInvalidTrigger(playerType);
     }
 
     private void TriggerJack()
     {
-
+        gameController.OnInvalidTrigger(playerType);
     }
 
     private void TriggerCutter()

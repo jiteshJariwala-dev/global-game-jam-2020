@@ -24,6 +24,7 @@ public class CharacterController : MonoBehaviour
 
     private KeyBinding keyBinding;
     private string walkingTrigger = "IsWalking";
+    private bool isJumping = false;
 
     // Start is called before the first frame update
     void Start()
@@ -72,12 +73,17 @@ public class CharacterController : MonoBehaviour
             canvas.GetComponent<Animator>().SetBool("LetStart", true);
         }
 
-        if (isOnPlatform)
+        if (isOnPlatform && !isJumping)
         {
             if (Input.GetKeyDown(keyBinding.moveUp))
             {
                 MovePlayer(MoveDirection.UP);
             }
+        }
+
+        if (Input.GetKeyUp(keyBinding.moveUp))
+        {
+            isJumping = false;
         }
         
         if (Input.GetKey(keyBinding.moveDown))
