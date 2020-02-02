@@ -19,6 +19,7 @@ public class CharacterController : MonoBehaviour
     private KeyBindingScriptableObject keyBindingObj;
 
     bool isOnPlatform = true;
+    private Collider2D currentCollider;
 
     private KeyBinding keyBinding;
     private string walkingTrigger = "IsWalking";
@@ -63,12 +64,12 @@ public class CharacterController : MonoBehaviour
         }
         if (Input.GetKey(keyBinding.moveLeft))
         {
-            animator.SetBool(walkingTrigger, true);
+            // animator.SetBool(walkingTrigger, true);
             MovePlayer(MoveDirection.LEFT);
         }
         if (Input.GetKey(keyBinding.moveRight))
         {
-            animator.SetBool(walkingTrigger, true);
+            // animator.SetBool(walkingTrigger, true);
             MovePlayer(MoveDirection.RIGHT);
         }
 
@@ -119,6 +120,7 @@ public class CharacterController : MonoBehaviour
         if(collision.gameObject.tag == "Platform")
         {
             isOnPlatform = true;
+            currentCollider = collision.collider;
         }
     }
 
@@ -126,10 +128,12 @@ public class CharacterController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform")
         {
-            isOnPlatform = false;
+            if (collision.collider == currentCollider)
+            {
+                isOnPlatform = false;
+            }
         }
     }
-
 
 }
 
