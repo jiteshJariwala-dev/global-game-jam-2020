@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -49,6 +50,11 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.anyKeyDown)
+        {
+            GameObject canvas = GameObject.FindGameObjectWithTag("ContolText");
+            canvas.GetComponent<Animator>().SetBool("LetStart", true);
+        }
 
         if (isOnPlatform)
         {
