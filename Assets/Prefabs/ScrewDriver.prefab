@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 284220280797503681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 7317994200577005339}
   m_Father: {fileID: 284220281038484406}
@@ -40,7 +40,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284220280797503681}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8add6e559a5bb0643852e33c7b7cb1fb, type: 2}
   m_CullingMode: 0
@@ -111,10 +111,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.27548093, y: 0.45820963}
-      - {x: -0.3242997, y: 0.43090975}
-      - {x: 0.14331688, y: -0.32235217}
-      - {x: 0.26225883, y: -0.23201096}
+    - - {x: -0.17577659, y: 0.29864082}
+      - {x: -0.20465456, y: 0.27134094}
+      - {x: 0.090141244, y: -0.20267555}
+      - {x: 0.15923114, y: -0.15555088}
       - {x: 0.016858831, y: 0.078615665}
 --- !u!50 &284220281038484404
 Rigidbody2D:
@@ -166,6 +166,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
+  isConsumable: 0
+  isInteractable: 1
+  hasSwapItem: 0
+  swapItem: {fileID: 0}
 --- !u!1 &2600258233378517211
 GameObject:
   m_ObjectHideFlags: 0

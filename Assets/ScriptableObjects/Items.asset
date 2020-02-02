@@ -19,6 +19,7 @@ MonoBehaviour:
     - {fileID: 4102709968647289293, guid: bf33bb497ea1d654aa19422d56c51467, type: 3}
     playerTwoItems:
     - {fileID: 284220281038484402, guid: 77667ff09b83f1945a0bcb41653704d6, type: 3}
+    - {fileID: 284220281038484402, guid: 343226af8cc98894dbf10b065874fc77, type: 3}
     playerOnePos: {x: -1.758, y: 0, z: -0.1}
     playerTwoPos: {x: 1.576, y: -1, z: -0.1}
     actionToWin: 0

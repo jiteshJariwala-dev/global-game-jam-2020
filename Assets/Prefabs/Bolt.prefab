@@ -196,6 +196,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
+  isConsumable: 0
+  isInteractable: 1
+  hasSwapItem: 0
+  swapItem: {fileID: 0}
 --- !u!1 &8223904646776643613
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +240,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8223904646776643613}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8add6e559a5bb0643852e33c7b7cb1fb, type: 2}
   m_CullingMode: 0

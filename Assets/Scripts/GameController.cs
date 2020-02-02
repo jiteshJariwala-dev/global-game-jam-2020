@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour
         playerTwoGO.GetComponent<CharacterController>().Init(this, PlayerType.PLAYER_TWO);
 
         actionToWin = items.items[levelIndex].actionToWin;
+        Debug.Log(actionToWin);
     }
 
     private void SwitchItems(PlayerType playerType)
