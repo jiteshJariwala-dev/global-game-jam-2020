@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -645,6 +645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: {fileID: 11400000, guid: 2d776ed150cf8467ebd6a9166da99564, type: 2}
   canvas: {fileID: 1702154428}
+  levelIndex: 0
 --- !u!4 &869133168
 Transform:
   m_ObjectHideFlags: 0
@@ -1188,17 +1189,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250774575}
-  m_LocalRotation: {x: -0, y: -0, z: 0.2519429, w: -0.96774215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590589461}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -29.185001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 804, y: -279}
-  m_SizeDelta: {x: 269.5, y: 152.5}
+  m_AnchoredPosition: {x: 733.7, y: -239.2}
+  m_SizeDelta: {x: 410.1, y: 232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250774577
 MonoBehaviour:
@@ -1219,7 +1220,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: dec5ed4cfb335d448b10a6606000695f, type: 3}
+    m_Font: {fileID: 12800000, guid: 3d00420b94439bc4da61bfa3e34b9712, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1272,13 +1273,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289768677}
-  m_LocalRotation: {x: -0, y: -0, z: 0.25225955, w: 0.9676596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590589461}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 29.223001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -735, y: 286}
@@ -1303,7 +1304,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: dec5ed4cfb335d448b10a6606000695f, type: 3}
+    m_Font: {fileID: 12800000, guid: 3d00420b94439bc4da61bfa3e34b9712, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
