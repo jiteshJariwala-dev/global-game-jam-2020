@@ -7,6 +7,8 @@ TagManager:
   - Platform
   - Bolt
   - Cuttable
+  - Wire_Vertical
+  - ContolText
   layers:
   - Default
   - TransparentFX

@@ -81,26 +81,27 @@ public class ItemController : MonoBehaviour
         {
             Debug.Log("Screw the bolt");
         }
+        gameController.OnInvalidTrigger(playerType);
     }
 
     private void TriggerBolt()
     {
-
+        gameController.OnInvalidTrigger(playerType);
     }
 
     private void TriggerNut()
     {
-
+        gameController.OnInvalidTrigger(playerType);
     }
 
     private void TriggerGear()
     {
-
+        gameController.OnInvalidTrigger(playerType);
     }
 
     private void TriggerJack()
     {
-
+        gameController.OnInvalidTrigger(playerType);
     }
 
     private void TriggerCutter()
@@ -114,6 +115,10 @@ public class ItemController : MonoBehaviour
             }
             gameController.OnActionDone();
             Debug.Log("Cut the Wire");
+        }
+        else
+        {
+            gameController.OnInvalidTrigger(playerType);
         }
     }
 
@@ -133,7 +138,15 @@ public class ItemController : MonoBehaviour
                 gameController.OnConsumableItem(playerType);
                 gameController.OnActionDone();
             }
+            else
+            {
+                gameController.OnInvalidTrigger(playerType);
+            }
             Debug.Log("Add the Wire");
+        }
+        else
+        {
+            gameController.OnInvalidTrigger(playerType);
         }
     }
 

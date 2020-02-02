@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class CharacterController : MonoBehaviour
 
     private KeyBinding keyBinding;
     private string walkingTrigger = "IsWalking";
+    private bool isJumping = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,16 +48,42 @@ public class CharacterController : MonoBehaviour
         this.GetComponent<ItemController>().Init(controller, playerType);
     }
 
+    public void InvalidMove()
+    {
+        Debug.Log("Play wrong anim");
+        animator.transform.localRotation = Quaternion.identity;
+        // animator.Play("WrongMove");
+        StartCoroutine(PlayAnim());
+        //animator.SetTrigger("WrongMove");
+    }
+
+    IEnumerator PlayAnim()
+    {
+        animator.Play("DefaultAnim");
+        yield return new WaitForEndOfFrame();
+        animator.Play("WrongMove", 0, 0f);
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (Input.anyKeyDown)
+        {
+            GameObject canvas = GameObject.FindGameObjectWithTag("ContolText");
+            canvas.GetComponent<Animator>().SetBool("LetStart", true);
+        }
 
-        if (isOnPlatform)
+        if (isOnPlatform && !isJumping)
         {
             if (Input.GetKeyDown(keyBinding.moveUp))
             {
                 MovePlayer(MoveDirection.UP);
             }
+        }
+
+        if (Input.GetKeyUp(keyBinding.moveUp))
+        {
+            isJumping = false;
         }
         
         if (Input.GetKey(keyBinding.moveDown))
@@ -64,12 +92,12 @@ public class CharacterController : MonoBehaviour
         }
         if (Input.GetKey(keyBinding.moveLeft))
         {
-            // animator.SetBool(walkingTrigger, true);
+            animator.SetBool(walkingTrigger, true);
             MovePlayer(MoveDirection.LEFT);
         }
         if (Input.GetKey(keyBinding.moveRight))
         {
-            // animator.SetBool(walkingTrigger, true);
+            animator.SetBool(walkingTrigger, true);
             MovePlayer(MoveDirection.RIGHT);
         }
 

@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
     private int playerTwoItemIndex = 0;
     private int actionDone = 0;
 
-    
+    private GameObject currentActionGO;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,9 @@ public class GameController : MonoBehaviour
     {
         playerOneItems = new List<GameObject>(items.items[levelIndex].playerOneItems);
         playerTwoItems = new List<GameObject>(items.items[levelIndex].playerTwoItems);
+
+        actionDone = 0;
+        currentActionGO = Instantiate(items.items[levelIndex].actionPrefabs[actionDone]);
 
         playerOneGO = Instantiate(playerOneItems[playerOneItemIndex]);
         playerTwoGO = Instantiate(playerTwoItems[playerTwoItemIndex]);
@@ -67,6 +70,7 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
+                    playerOneGO.GetComponent<CharacterController>().InvalidMove();
                     Debug.Log("Player one has only 1 item left");
                 }
                 break;
@@ -87,6 +91,7 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
+                    playerTwoGO.GetComponent<CharacterController>().InvalidMove();
                     Debug.Log("Player two has only 1 item left");
                 }
                 break;
@@ -102,6 +107,19 @@ public class GameController : MonoBehaviour
                 break;
             case PlayerType.PLAYER_TWO:
                 playerTwoGO.GetComponent<ItemController>().TriggerItemInteration();
+                break;
+        }
+    }
+
+    public void OnInvalidTrigger(PlayerType playerType)
+    {
+        switch (playerType)
+        {
+            case PlayerType.PLAYER_ONE:
+                playerOneGO.GetComponent<CharacterController>().InvalidMove();
+                break;
+            case PlayerType.PLAYER_TWO:
+                playerTwoGO.GetComponent<CharacterController>().InvalidMove();
                 break;
         }
     }
@@ -176,10 +194,16 @@ public class GameController : MonoBehaviour
 
     public void OnActionDone()
     {
+        // Destroy(currentActionGO);
         actionDone++;
+       
         if (actionDone >= actionToWin)
         {
             canvas.SetActive(true);
+        }
+        else
+        {
+            currentActionGO = Instantiate(items.items[levelIndex].actionPrefabs[actionDone]);
         }
     }
 
