@@ -31,8 +31,8 @@ public class GameController : MonoBehaviour
 
     private void Init()
     {
-        playerOneItems = items.items[levelIndex].playerOneItems;
-        playerTwoItems = items.items[levelIndex].playerTwoItems;
+        playerOneItems = new List<GameObject>(items.items[levelIndex].playerOneItems);
+        playerTwoItems = new List<GameObject>(items.items[levelIndex].playerTwoItems);
 
         playerOneGO = Instantiate(playerOneItems[playerOneItemIndex]);
         playerTwoGO = Instantiate(playerTwoItems[playerTwoItemIndex]);
@@ -43,7 +43,6 @@ public class GameController : MonoBehaviour
         playerTwoGO.GetComponent<CharacterController>().Init(this, PlayerType.PLAYER_TWO);
 
         actionToWin = items.items[levelIndex].actionToWin;
-        Debug.Log(actionToWin);
     }
 
     private void SwitchItems(PlayerType playerType)
@@ -127,7 +126,7 @@ public class GameController : MonoBehaviour
         switch (type)
         {
             case PlayerType.PLAYER_ONE:
-                // Destroy(playerOneGO);
+                Destroy(playerOneGO);
                 playerOneGO.SetActive(false);
                 playerOneItems.RemoveAt(playerOneItemIndex);
                 playerOneItemIndex--;
@@ -150,7 +149,7 @@ public class GameController : MonoBehaviour
                 break;
 
             case PlayerType.PLAYER_TWO:
-                //Destroy(playerTwoGO);
+                Destroy(playerTwoGO);
                 playerTwoGO.SetActive(false);
                 playerTwoItems.RemoveAt(playerTwoItemIndex);
                 playerTwoItemIndex--;
