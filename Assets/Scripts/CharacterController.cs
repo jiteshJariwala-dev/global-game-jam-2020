@@ -24,6 +24,8 @@ public class CharacterController : MonoBehaviour
 
     private KeyBinding keyBinding;
     private string walkingTrigger = "IsWalking";
+
+    public bool canMove = true;
  //   private bool isJumping = false;
 
     // Start is called before the first frame update
@@ -67,6 +69,10 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove)
+        {
+            return;
+        }
         if (Input.anyKeyDown)
         {
             GameObject canvas = GameObject.FindGameObjectWithTag("ContolText");

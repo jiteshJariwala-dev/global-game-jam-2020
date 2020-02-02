@@ -201,12 +201,21 @@ public class GameController : MonoBehaviour
        
         if (actionDone >= actionToWin)
         {
-            canvas.SetActive(true);
+            playerOneGO.GetComponent<CharacterController>().canMove = false;
+            playerTwoGO.GetComponent<CharacterController>().canMove = false;
+            StartCoroutine(ShowWinScreen());
         }
         else
         {
+            currentActionGO.SetActive(false);
             currentActionGO = Instantiate(items.items[levelIndex].actionPrefabs[actionDone]);
         }
+    }
+
+    IEnumerator ShowWinScreen()
+    {
+        yield return new WaitForSeconds(3f);
+        canvas.SetActive(true);
     }
 
     
