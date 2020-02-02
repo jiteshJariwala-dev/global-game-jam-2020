@@ -13,6 +13,8 @@ public class ItemsForLevel
     public List<GameObject> playerOneItems = new List<GameObject>();
     public List<GameObject> playerTwoItems = new List<GameObject>();
 
+    public List<GameObject> actionPrefabs = new List<GameObject>();
+
     public Vector3 playerOnePos;
     public Vector3 playerTwoPos;
 
