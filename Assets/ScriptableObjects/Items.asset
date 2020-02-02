@@ -20,16 +20,21 @@ MonoBehaviour:
     playerTwoItems:
     - {fileID: 284220281038484402, guid: 77667ff09b83f1945a0bcb41653704d6, type: 3}
     - {fileID: 284220281038484402, guid: 343226af8cc98894dbf10b065874fc77, type: 3}
+    actionPrefabs:
+    - {fileID: 341784534410580140, guid: 09bdc7cfff9a44575b4236692677a5a8, type: 3}
+    - {fileID: 354050227656529924, guid: a0bafd3039e2246209184b101b7363dc, type: 3}
     playerOnePos: {x: -0.94, y: 0.764, z: -0.1}
     playerTwoPos: {x: 1.522, y: -0.934, z: -0.1}
     actionToWin: 2
   - playerOneItems: []
     playerTwoItems: []
+    actionPrefabs: []
     playerOnePos: {x: 0, y: 0, z: -0.1}
     playerTwoPos: {x: 0, y: 0, z: -0.1}
     actionToWin: 0
   - playerOneItems: []
     playerTwoItems: []
+    actionPrefabs: []
     playerOnePos: {x: 0, y: 0, z: 0}
     playerTwoPos: {x: 0, y: 0, z: 0}
     actionToWin: 0
