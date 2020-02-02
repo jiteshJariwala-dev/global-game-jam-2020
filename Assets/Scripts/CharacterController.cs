@@ -24,7 +24,9 @@ public class CharacterController : MonoBehaviour
 
     private KeyBinding keyBinding;
     private string walkingTrigger = "IsWalking";
-    private bool isJumping = false;
+
+    public bool canMove = true;
+ //   private bool isJumping = false;
 
     // Start is called before the first frame update
     void Start()
@@ -67,23 +69,23 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove)
+        {
+            return;
+        }
         if (Input.anyKeyDown)
         {
             GameObject canvas = GameObject.FindGameObjectWithTag("ContolText");
-            canvas.GetComponent<Animator>().SetBool("LetStart", true);
+            if (canvas != null)
+               canvas.GetComponent<Animator>().SetBool("LetStart", true);
         }
 
-        if (isOnPlatform && !isJumping)
+        if (isOnPlatform)
         {
             if (Input.GetKeyDown(keyBinding.moveUp))
             {
                 MovePlayer(MoveDirection.UP);
             }
-        }
-
-        if (Input.GetKeyUp(keyBinding.moveUp))
-        {
-            isJumping = false;
         }
         
         if (Input.GetKey(keyBinding.moveDown))
@@ -126,7 +128,7 @@ public class CharacterController : MonoBehaviour
             case MoveDirection.UP:
                 //playerRigidbody.AddForce(new Vector2(0, 1), ForceMode2D.Impulse);
                 playerRigidbody.AddForce(Vector2.up * 1.3f, ForceMode2D.Impulse);
-                //Debug.Log("Going Up");
+                Debug.Log("Going Up");
                 break;
             case MoveDirection.DOWN:
                 playerRigidbody.AddForce(new Vector2(0, -1));

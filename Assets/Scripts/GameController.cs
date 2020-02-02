@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 
     public GameObject canvas;
 
+    [SerializeField]
     private int levelIndex = 0;
 
     private List<GameObject> playerOneItems = new List<GameObject>();
@@ -46,6 +47,7 @@ public class GameController : MonoBehaviour
         playerTwoGO.GetComponent<CharacterController>().Init(this, PlayerType.PLAYER_TWO);
 
         actionToWin = items.items[levelIndex].actionToWin;
+        Debug.Log("Level Loaded");
     }
 
     private void SwitchItems(PlayerType playerType)
@@ -199,12 +201,21 @@ public class GameController : MonoBehaviour
        
         if (actionDone >= actionToWin)
         {
-            canvas.SetActive(true);
+            playerOneGO.GetComponent<CharacterController>().canMove = false;
+            playerTwoGO.GetComponent<CharacterController>().canMove = false;
+            StartCoroutine(ShowWinScreen());
         }
         else
         {
+            currentActionGO.SetActive(false);
             currentActionGO = Instantiate(items.items[levelIndex].actionPrefabs[actionDone]);
         }
+    }
+
+    IEnumerator ShowWinScreen()
+    {
+        yield return new WaitForSeconds(3f);
+        canvas.SetActive(true);
     }
 
     
