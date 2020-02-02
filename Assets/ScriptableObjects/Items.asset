@@ -27,17 +27,19 @@ MonoBehaviour:
     playerTwoPos: {x: 1.522, y: -0.934, z: -0.1}
     actionToWin: 2
   - playerOneItems:
-    - {fileID: 293191719832305439, guid: e5b5b275933066b4b92187b85b2cb7eb, type: 3}
+    - {fileID: 8223904646043475306, guid: 4cb47dca6051bc143b4f791d27c7f89d, type: 3}
+    - {fileID: 284220281038484402, guid: 343226af8cc98894dbf10b065874fc77, type: 3}
+    - {fileID: 8223904646043475306, guid: 4cb47dca6051bc143b4f791d27c7f89d, type: 3}
     - {fileID: 284220281038484402, guid: 343226af8cc98894dbf10b065874fc77, type: 3}
     playerTwoItems:
     - {fileID: 284220281038484402, guid: 77667ff09b83f1945a0bcb41653704d6, type: 3}
-    - {fileID: 293191719832305439, guid: e5b5b275933066b4b92187b85b2cb7eb, type: 3}
+    - {fileID: 8223904646043475306, guid: 4cb47dca6051bc143b4f791d27c7f89d, type: 3}
     - {fileID: 284220281038484402, guid: 298997288b7f06647bb57308f2eb2687, type: 3}
     actionPrefabs:
-    - {fileID: 7757213424957589817, guid: c7609be2757ac4e4d8390ca73f9e0770, type: 3}
-    - {fileID: 4995603719284385600, guid: d343913063fed48d5a488cf36bfa8d12, type: 3}
     - {fileID: 7143136987732140223, guid: 43745213595604094a65836b701d9295, type: 3}
     - {fileID: 4633729571191815025, guid: a9afe9381e0ca4cd4983e7cdaf123241, type: 3}
+    - {fileID: 7757213424957589817, guid: c7609be2757ac4e4d8390ca73f9e0770, type: 3}
+    - {fileID: 4995603719284385600, guid: d343913063fed48d5a488cf36bfa8d12, type: 3}
     playerOnePos: {x: -0.94, y: -0.934, z: -0.1}
     playerTwoPos: {x: 1.522, y: -0.934, z: -0.1}
     actionToWin: 4
