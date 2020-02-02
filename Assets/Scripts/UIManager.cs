@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -48,11 +49,12 @@ public class UIManager : MonoBehaviour
    // }
     public void RetryButton()
     {
-        Application.LoadLevel(1);
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        Application.LoadLevel(scene);
     }
     public void HomeButton()
     {
-        Time.timeScale = 1.0f;
+        //Time.timeScale = 1.0f;
         Application.LoadLevel(0);
     }
     public void OpenCredit()

@@ -13,6 +13,17 @@ public class LevelLoad : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        Application.LoadLevel(scene);
+    }
+
+    public void nextLevel()
+    {
+        Application.LoadLevel(2);
+    }
+
+    public void mainMenu()
+    {
+        Application.LoadLevel(0);
     }
 }
