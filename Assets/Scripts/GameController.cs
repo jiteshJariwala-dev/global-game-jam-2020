@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 
     public GameObject canvas;
 
+    [SerializeField]
     private int levelIndex = 0;
 
     private List<GameObject> playerOneItems = new List<GameObject>();
@@ -46,6 +47,7 @@ public class GameController : MonoBehaviour
         playerTwoGO.GetComponent<CharacterController>().Init(this, PlayerType.PLAYER_TWO);
 
         actionToWin = items.items[levelIndex].actionToWin;
+        Debug.Log("Level Loaded");
     }
 
     private void SwitchItems(PlayerType playerType)
